@@ -171,9 +171,9 @@ public class MainActivity extends BaseActivity implements SensorEventListener, V
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             BDLocation location = (BDLocation) msg.obj;
-            LatLng LocationPoint = new LatLng(location.getLatitude(), location.getLongitude());
+            LatLng LocationPoint = new LatLng(location.getLatitude(),location.getLongitude());
             //打卡范围
-            mDestinationPoint = new LatLng(location.getLatitude() * 1.0001, location.getLongitude() * 1.0001);//假设公司坐标
+            mDestinationPoint = new LatLng(location.getLatitude()*1.0001,location.getLongitude()*1.0001);//假设公司坐标
             setCircleOptions();
             //计算两点距离,单位：米
             mDistance = DistanceUtil.getDistance(mDestinationPoint, LocationPoint);
